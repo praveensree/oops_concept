@@ -5,6 +5,8 @@ namespace ClassObjectsDemo
     {
         static void Main(string[] args)
         {
+
+            
             Employee e1 = new Employee(752,23,"TamilNadu", "Praveen");
             Employee e2 = new Employee(754, 24, "Hyderabad", "Anudeep");
             e1.Display();
@@ -22,9 +24,12 @@ namespace ClassObjectsDemo
         }
     }
 
+    class Company
+    {
+        public string company = "Bhavna";
+    }
 
-
-    class Employee
+    class Employee:Company
     {
         int eid, eage;
         string eaddress, ename;
@@ -41,7 +46,7 @@ namespace ClassObjectsDemo
             Console.WriteLine($"employee name is:  { ename}");
             Console.WriteLine($"employee age is:  { eage}");
             Console.WriteLine($"employee address is: { eaddress}");
-            Console.WriteLine(" ");
+            Console.WriteLine($" company name is:{company}");
         }
         public void Sum(int no1, int no2)
         {
