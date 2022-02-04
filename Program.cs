@@ -5,48 +5,55 @@ namespace ClassObjectsDemo
     {
         static void Main(string[] args)
         {
-            Employee e1 = new Employee(752, 23, "TamilNadu", "Praveen");
-            Employee e2 = new Employee(754, 24, "Hyderabad", "Anudeep");
-            e1.Display();
-            e2.Display();
+            Details details = new Details(752, 23, "TamilNadu", "Praveen");//object for child class of (Company)
 
-            e1.Multiply(12, 32);
-            e1.Multiply(12, 32, 14);
+            details.Display();
+
+
+            details.Projects("GHX", "ConnectWise");
+            details.Projects("elamica", "MeredialLink", "TechnologyAdvice");
 
 
             Console.WriteLine("Enter the first value");
-            int first = Convert.ToInt32(Console.ReadLine());
+            string first = Console.ReadLine();
             Console.WriteLine("Enter the Second value");
-            int second = Convert.ToInt32(Console.ReadLine());
+            string second = Console.ReadLine();
 
-
-
-            e1.Sum(first, second);
-
-
+            details.fullname(first, second);
         }
     }
+
+
+    //abstract class
+    //parent class
     abstract class Company
     {
+        //data hiding
         protected string company = "Bhavna";
         public abstract void Display();
-        public virtual void Sum(int no1, int no2)
+        public virtual void fullname(string no1, string no2)
         {
-            int res = no1 + no2;
-            Console.WriteLine($"The value is  {res}");
+            string res = no1 + no2;
+            Console.WriteLine($"name  {res}");
         }
     }
-    class Employee : Company
+
+    //child class
+    class Details : Company
     {
         int eid, eage;
         string eaddress, ename;
-        public Employee(int id, int age, string address, string name)
+
+        //constructor
+        public Details(int id, int age, string address, string name)
         {
             eid = id;
             eage = age;
             ename = name;
             eaddress = address;
         }
+
+        //abstract method
         public override void Display()
         {
             Console.WriteLine($"employee id is:  { eid}");
@@ -55,18 +62,28 @@ namespace ClassObjectsDemo
             Console.WriteLine($"employee address is: { eaddress}");
             Console.WriteLine($"company name is:{company}");
         }
-        public override void Sum(int no1, int no2)
+
+
+        //overriding
+        public override void fullname(string fname, string lname)
         {
-            int res = no1 + no2;
-            Console.WriteLine($"The value is  {res}");
+            string res = fname + lname;
+            Console.WriteLine($"Fullname is  {res}");
         }
-        public void Multiply(int x, int y)
+
+        //overloading 
+        public void Projects(string p_one, string p_two)
         {
-            Console.WriteLine(x + y);
+            Console.WriteLine($"project number 1 is:{p_one}");
+            Console.WriteLine($"project number 2 is:{p_two}");
         }
-        public void Multiply(int x, int y, int z)
+
+        //overloading
+        public void Projects(string p_one, string p_two, string p_three)
         {
-            Console.WriteLine(x * y * z);
+            Console.WriteLine($"project number 1 is:{p_one}");
+            Console.WriteLine($"project number 2 is:{p_two}");
+            Console.WriteLine($"project number 3 is:{p_three}");
         }
     }
 }
