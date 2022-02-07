@@ -5,6 +5,9 @@ namespace ClassObjectsDemo
     {
         static void Main(string[] args)
         {
+            asyncawait aa = new asyncawait();
+            aa.tasks();
+
             Dict dict = new Dict();
             dict.Register();
 
