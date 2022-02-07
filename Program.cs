@@ -5,6 +5,21 @@ namespace ClassObjectsDemo
     {
         static void Main(string[] args)
         {
+            Birds birds = new Birds();
+            birds.BirdNames();
+
+            Animals animals = new Animals();
+            animals.AnimalNames();
+
+            Countries countries = new Countries();
+            countries.CountryNames();
+
+            StudentDetail studentDetail = new StudentDetail();
+            studentDetail.SDetail();
+
+            Cars cars = new Cars();
+            cars.CarBrand();
+
             Details details = new Details(752, 23, "TamilNadu", "Praveen");//object for child class of (Company)
 
             details.Display();
@@ -14,12 +29,14 @@ namespace ClassObjectsDemo
             details.Projects("elamica", "MeredialLink", "TechnologyAdvice");
 
 
-            Console.WriteLine("Enter the first value");
+            Console.WriteLine("Enter the first Name");
             string first = Console.ReadLine();
-            Console.WriteLine("Enter the Second value");
+            Console.WriteLine("Enter the Second Name");
             string second = Console.ReadLine();
 
             details.fullname(first, second);
+
+           
         }
     }
 
