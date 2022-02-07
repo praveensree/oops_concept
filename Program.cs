@@ -5,6 +5,19 @@ namespace ClassObjectsDemo
     {
         static void Main(string[] args)
         {
+            Dict dict = new Dict();
+            dict.Register();
+
+            Sortedlist sortedlist = new Sortedlist();
+            sortedlist.Register();
+
+            Employee employee = new Employee();
+            employee.EDetails();
+
+            TypedNumber typedNumber = new TypedNumber();
+            typedNumber.Data<int>(751, 754);
+            typedNumber.Data<string>("Praveen", "Anudeep");
+
             Birds birds = new Birds();
             birds.BirdNames();
 
