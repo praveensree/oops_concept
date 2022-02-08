@@ -38,9 +38,7 @@ namespace ClassObjectsDemo
         new Student() { StudentID = 9, StudentName = "Arjun" , Age = 23 }
 
     };
-            var teenAgerStudent = from s in students
-                                  where s.Age > 12 && s.Age < 20
-                                  select s;
+            var teenAgerStudent = from s in students where s.Age > 12 && s.Age < 20 select s;
             Console.WriteLine("Teen age Students:");
             foreach (Student std in teenAgerStudent)
             {
@@ -55,6 +53,15 @@ namespace ClassObjectsDemo
             foreach (Student std in major)
             {
                 Console.Write(std.StudentName+" ,");
+            }
+            Console.WriteLine(" ");
+
+            var orderByDescendingResult = from s in students orderby s.StudentName select s;
+            Console.WriteLine("Ascending order by name:");
+
+            foreach (Student std in orderByDescendingResult)
+            {
+                Console.Write(std.StudentName + " ,");
             }
             Console.WriteLine(" ");
         }
