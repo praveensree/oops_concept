@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace ClassObjectsDemo
 {
+    //student model
     class Student
     {
         public int StudentID { get; set; }
@@ -38,6 +39,7 @@ namespace ClassObjectsDemo
         new Student() { StudentID = 9, StudentName = "Arjun" , Age = 23 }
 
     };
+            //where
             var teenAgerStudent = from s in students where s.Age > 12 && s.Age < 20 select s;
             Console.WriteLine("Teen age Students:");
             foreach (Student std in teenAgerStudent)
@@ -56,6 +58,8 @@ namespace ClassObjectsDemo
             }
             Console.WriteLine(" ");
 
+
+            //orderby
             var orderByDescendingResult = from s in students orderby s.StudentName select s;
             Console.WriteLine("Ascending order by name:");
 
@@ -64,6 +68,18 @@ namespace ClassObjectsDemo
                 Console.Write(std.StudentName + " ,");
             }
             Console.WriteLine(" ");
+
+
+            //thenby method
+            var thenByResult = students.OrderBy(s => s.StudentName).ThenBy(s => s.Age);
+            Console.WriteLine("Ascending order by name:");
+
+            foreach (Student std in thenByResult)
+            {
+                Console.Write(std.StudentName + " ,");
+            }
+            Console.WriteLine(" ");
+
         }
     }
 }
