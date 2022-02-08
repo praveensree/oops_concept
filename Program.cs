@@ -5,6 +5,9 @@ namespace ClassObjectsDemo
     {
         static void Main(string[] args)
         {
+            linq li = new linq();
+            li.Employee();
+
             asyncawait aa = new asyncawait();
             aa.tasks();
 
@@ -52,7 +55,7 @@ namespace ClassObjectsDemo
 
             details.fullname(first, second);
 
-           
+
         }
     }
 
