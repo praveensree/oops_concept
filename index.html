@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Data Types</h1>
+
+<p>In this example, x, y, and z are undeclared variables.</p>
+
+<p id="res"></p>
+<p id="conc"></p>
+<p id="temp"></p>
+<h2 id="car"></h2>
+
+
+
+<script>
+const x = 10;
+const y = 20;
+
+let z = x + y;
+z /=6;
+let concat = z+"Praveen";
+
+const car = {
+   Brand:"Ford",
+    model:"Figo", 
+    color:"Red"
+};
+
+document.getElementById("res").innerHTML = "The value of z is: " + z;
+document.getElementById("conc").innerHTML = "The value of z is: " + concat;
+
+document.getElementById("temp").innerHTML =
+"The temperature is " + toCelsius(77) + " Celsius";
+
+function toCelsius(f) {
+  return (5/9) * (f-32);
+} 
+
+document.getElementById("car").innerHTML = "This is a "+ car.color +" colour "+ car.Brand +" "+ car.model;
+</script>
+
+</body>
+</html>
